@@ -18,7 +18,7 @@
     stream.constructor = Stream
 
     stream.map = function(fn) {
-      let newStream = value ? Stream(fn(value)) : Stream()
+      let newStream = value !== undefined ? Stream(fn(value)) : Stream()
         dStreams.push(newStream)
         dFns.push(fn)
       return newStream
@@ -37,7 +37,8 @@
 
   }
 
+  s = Stream
   window.s = Stream
-  return s
+  
 
 }())
