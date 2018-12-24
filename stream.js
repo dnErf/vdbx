@@ -1,7 +1,5 @@
 ;(function(){
 
-  var s;
-
   function Stream(value) {
 
     var dStreams = []
@@ -37,8 +35,24 @@
 
   }
 
-  s = Stream
-  window.s = Stream
-  
+  function merge(arrStream) {
+    let
+      newStream = Stream()
+      , newArrStream = []
+    arrStream.forEach((v,i) => {
+      v.map(function(value) {
+        newArrStream[i] = value
+        newStream(newArrStream)
+        return value
+      })
+    })
+    return newStream
+  }
 
+  Stream.merge = merge
+
+  typeof module !== 'undefined' 
+  ? module.exports = Stream 
+  : window.stream = Stream
+  
 }())

@@ -1,0 +1,27 @@
+{
+  "name": "vdbx",
+  "version": "1.0.0",
+  "description": "light weight re-write of some tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx ospec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnErf/vdbx.git"
+  },
+  "keywords": [
+    "javascript",
+    "utility",
+    "tools"
+  ],
+  "author": "dnErf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dnErf/vdbx/issues"
+  },
+  "homepage": "https://github.com/dnErf/vdbx#readme",
+  "devDependencies": {
+    "ospec": "^3.0.1"
+  }
+}

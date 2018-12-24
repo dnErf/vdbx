@@ -1,6 +1,6 @@
 ;(function(){
 
-  var l;
+  // var l;
   
   function Lob (lthru,obj) {
     
@@ -26,9 +26,10 @@
 
     prototype._$map = function(fn,overlook) {
       
-      let lookover = overlook === undefined 
-              ? mkeys : lob.hasOwnProperty(overlook) 
-              ? Object.keys(lob[overlook]) : []
+      let 
+        lookover = overlook === undefined 
+          ? mkeys : lob.hasOwnProperty(overlook) 
+          ? Object.keys(lob[overlook]) : []
               
       lookover.forEach((value,index) => {
         if (overlook !== undefined) {
@@ -47,9 +48,9 @@
       
       let 
         init = arguments.length === 2
-        , lookover = overlook === '' 
-        ? mkeys : lob.hasOwnProperty(overlook) 
-        ? Object.keys(lob[overlook]) : []
+          , lookover = overlook === '' 
+          ? mkeys : lob.hasOwnProperty(overlook) 
+          ? Object.keys(lob[overlook]) : []
           
         lookover.forEach((value) => {
           if (overlook !== '') {
@@ -97,7 +98,11 @@
   
   }
 
-  window.l = Lob
-  return l
+  // window.l = Lob
+  // return l
+
+  typeof module !== 'undefined' 
+  ? module.exports = Lob 
+  : window.lense = Lob
 
 }())
