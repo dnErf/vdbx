@@ -6,10 +6,12 @@
     var dFns = []
 
     function stream(val) {
-      if (val !== undefined) value = val
+      if (val !== undefined) {
+        value = val
         dFns.forEach((fn,i) => {
           dStreams.length > 0 ? dStreams[i](fn(val)) : fn(val)
         })
+      }
       return value
     }
 

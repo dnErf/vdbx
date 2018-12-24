@@ -30,17 +30,35 @@ lense._$map((value) => { return value } , 'e')
 ```
 
 ### Streams
+> reactive data structure like cells in spreadsheet
 
 ```js 
 
-var stream = s()
-stream('name')
-stream() // -> name
+var name = Stream()
+
+name('Ter')
+name() // -> Ter
 
 // utilities map and scan
+var greet = stream_Name.map(function(value) {
+  return value.toLowerCase()
+})
+
+greet() // -> ter
+
 // unlike other stream implementation , this take itself as origin in invoking scan operations
-var newStream = stream.scan((cur,next) => {
-  return next
-} , acc)
+var greetings = greet.scan((accumulator,value) => {
+  return accumulator + ' ' + value
+} , 'Hi! ')
+
+greetings() // -> Hi! ter
+
+// you can merge stream and returns the value in array
+var name_greetings = Stream.merge([name,greetings]) 
+
+name_greetings() // -> ['ter','Hi! ter']
+
+// stream function will react and change its output when the value change
+
 
 ```
