@@ -1,5 +1,5 @@
 var vdbx = {
-  lense : require('./lense') ,
+  lens : require('./lens') ,
   stream : require('./stream')
 }
 

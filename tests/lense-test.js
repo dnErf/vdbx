@@ -1,5 +1,5 @@
 var o = require('ospec')
-var l = require('../index').lense
+var l = require('../index').lens
 
 o.spec('ospec and lense', function() {
   o('defined' , function() {
@@ -12,8 +12,8 @@ o.spec('ospec and lense', function() {
         z : 1
       }
     }
-    let lenseObj = l`${testObj}/b/`
-    o(lenseObj.a).equals(undefined)
-    o(lenseObj.z).equals(1)
+    let lensObj = l`${testObj}/b/`
+    o(lensObj.a).equals(undefined)
+    o(lensObj.z).equals(1)
   })
 })
