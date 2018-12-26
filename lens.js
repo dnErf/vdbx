@@ -103,6 +103,6 @@
 
   typeof module !== 'undefined' 
   ? module.exports = Lob 
-  : window.lense = Lob
+  : window.lens = Lob
 
 }())

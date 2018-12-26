@@ -1,18 +1,27 @@
 ### vdbx
 > Light weight re-write of some tools , like streams and lens
+```sh
+npm install vdbx --save
+```
+
+```javascript
+import {lens,stream} from 'vdbx'
+```
 
 ### Lens
+> a function that's used to help focus on a specific thing
+
 ```js
 var obj = {
   a : 'string1' ,
   b : {
     c : 'string2' ,
     d : 'string3' ,
-    e : ['arrayString']
+    e : ['array','String']
   }
 }
 
-var lense = l`${obj}\b\`
+var lens = l`${obj}/b/`
 
 console.log(lense)
 // this will out put a object with the value of
@@ -22,11 +31,33 @@ b : {
 }
 
 // with the refence on original object thru
-lense._$rdx 
+lens._$rdx 
 
-// this lense has some ulitity like map and can overlook the next set of value
+// this lens has some ulitity like map and can overlook the next set of value
 // by the given key and iterate over it
-lense._$map((value) => { return value } , 'e')
+
+lens._$map((value) => {
+  console.log(value) // -> array - String
+  return value 
+  } , 'e') // it overlook and see the value on e
+
+// scan takes a (fn , overlook , value)
+lens._$scan((acc,cur) => {
+  console.log(acc,cur) // accumulator string2 string3 , this will not read the value of e unless you overlook it
+  return cur
+},'','accumulator')
+
+// i use _$ to call the utilities so that it will not override the value
+// because it is still object
+
+lens.a // -> string1
+lens.a = 'STRING1' // this will overwrite the value of a
+
+lens._$commit() // -> this will merge the accumulated changes value on the lens to the origin (radix/rdx)
+
+console.log(obj.a) // STRING1
+
+
 ```
 
 ### Streams
