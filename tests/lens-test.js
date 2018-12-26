@@ -1,7 +1,7 @@
 var o = require('ospec')
 var l = require('../index').lens
 
-o.spec('ospec and lense', function() {
+o.spec('ospec and lens', function() {
   o('defined' , function() {
     o(1+2).equals(3)
   })
