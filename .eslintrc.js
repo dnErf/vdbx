@@ -14,7 +14,7 @@ module.exports = {
   },
   rules: {
     /* Possible errors */
-    'comma-dangle': 2,
+    // 'comma-dangle': 2,
     'no-cond-assign': 2,
     'no-console': 1,
     'no-constant-condition': 2,
@@ -192,7 +192,7 @@ module.exports = {
     'no-negated-condition': 2,
     'no-new-object': 2,
     'no-spaced-func': 2,
-    'no-trailing-spaces': 1,
+    // 'no-trailing-spaces': 1,
     'no-unneeded-ternary': 2,
     'no-whitespace-before-property': 2,
     'object-curly-spacing': [2, 'always'],
