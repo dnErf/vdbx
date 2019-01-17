@@ -1,6 +1,6 @@
 {
   "name": "vdbx",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "light weight re-write of some tools",
   "main": "index.js",
   "scripts": {
